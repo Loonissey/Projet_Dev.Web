@@ -4,10 +4,10 @@
 
 ## Membre du groupe : 
 
-Etudiant 1 (référent du groupe) :  [RUFFIN Tom](mailto:tom.ruffin@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
-Etudiant 2 : [SEYDOU Loonis](mailto:loonis.seydou@edu.univ-fcomte.fr?subject=SAE_1_05_06)   
-Etudiant 3 : [TUTIN Nathan](mailto:nathan.tutin@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
-Etudiant 4 : [RUICHEK Ibtisseme](mailto:ibtisseme.ruichek@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
+Page ... : [RUFFIN Tom](mailto:tom.ruffin@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
+Page ... : [SEYDOU Loonis](mailto:loonis.seydou@edu.univ-fcomte.fr?subject=SAE_1_05_06)   
+Page ... : [TUTIN Nathan](mailto:nathan.tutin@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
+Page ... : [RUICHEK Ibtisseme](mailto:ibtisseme.ruichek@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
 
 # Présentation du projet
 
