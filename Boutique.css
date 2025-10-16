@@ -1,0 +1,9 @@
+* {
+    --fond: #282454;
+    --primaire: #312d5d;
+    --secondaire: #1c1848;
+}
+
+body{
+    background-color: var(--fond);
+}
