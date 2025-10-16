@@ -7,3 +7,14 @@
 body{
     background-color: var(--fond);
 }
+
+.image_article{
+    width: 250px;
+    height: 350px;
+}
+
+.contenu_boutique{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
