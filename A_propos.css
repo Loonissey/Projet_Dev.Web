@@ -29,3 +29,9 @@ h1{
 body{
     background-color: var(--fond);
 }
+
+.tom>img{
+    border-radius: 50%;
+    height: 330px;
+    width: 330px;
+}
