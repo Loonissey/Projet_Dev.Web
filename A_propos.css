@@ -1,14 +1,72 @@
-*{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+* {
     --fond: #282454;
     --primaire: #312d5d;
     --secondaire: #1c1848;
-    --texte: rgb(62, 4, 156);
-    padding: 0;
+    font-family: "Google Sans Code", monospace;
     margin: 0;
-
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/*retire les points de la liste*/
+ul{
+    list-style: none;
+}
+
+/*retire les effects sur les liens*/
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+.header{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.header_contenu{
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:0 30px
+}
+
+.logo_img{
+    width: 17%;
+    height: 17%;
+}
+
+.navList{
+    display: flex;
+    column-gap: 70px;
+}
+
+.navLink{
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.4s;
+}
+
+.navLink:hover{
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+}
+
+@media (max-width: 650px){
+    .header_contenu{
+        flex-direction: column;
+        padding: 25px 0;
+        row-gap: 18px;
+    }
+
+    .logo_img{
+        height: 60px;
+        width: 60px;
+    }
+}
+
+
 
 h1{
     font-size: 50px;
