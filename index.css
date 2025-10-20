@@ -237,6 +237,7 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
+    box-shadow: 0 5px var(--secondaire);
 }
 
 /* rajoute une opacité sombre sur les images de fond */
@@ -361,5 +362,94 @@ a{
         width: 60px;
     }
 
+    .texte{
+        padding: 0 10%;
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-social {
+        margin-bottom: 0;
+    }
+
+    .footer-links {
+        justify-content: flex-end;
+    }
+
 }
 
+.titleContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 25px 0;
+    background-color: var(--primaire);
+    box-shadow: 10px 10px var(--secondaire);
+    border-radius: 25px;
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+.texteContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 25px 0;
+    background-color: var(--primaire);
+    box-shadow: 10px 10px var(--secondaire);
+    border-radius: 25px;
+    margin-left: 7vw;
+    margin-right: 7vw;
+}
+
+.texte{
+    color: #bbb9b9;
+}
+
+.footer {
+    background-color: var(--primaire);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border: var(--secondaire) 4px solid;
+}
+
+.footer_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_social {
+    margin-bottom: 20px;
+}
+
+.footer_social_icon {
+    margin: 0 10px;
+}
+
+.footer_social_icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer_links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer_link {
+    color: white;
+    margin: 5px 15px;
+    text-decoration: none;
+}
+
+.footer_link:hover {
+    text-decoration: underline;
+}
