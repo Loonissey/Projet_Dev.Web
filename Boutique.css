@@ -11,10 +11,16 @@ body{
 .image_article{
     width: 250px;
     height: 350px;
+    position: absolute;
+    flex-direction: row;
 }
 
 .contenu_boutique{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    width: 75%;
+    height: 1500px;
+    background-color: aliceblue;
+    margin: 15%;
+    box-sizing: border-box;
+    padding: 0;
 }
