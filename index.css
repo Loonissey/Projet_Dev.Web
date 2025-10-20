@@ -307,11 +307,11 @@ a{
     color:inherit;
 }
 
-.header{
-    background-color: rgba(0, 0, 0, 0.7);
+.headerTop{
+    background-color: rgb(0, 0, 0);
 }
 
-.header_contenu{
+.headerTop_contenu{
     min-height: 60px;
     display: flex;
     align-items: center;
@@ -326,23 +326,23 @@ a{
     height: 17%;
 }
 
-.navList{
+.navListTop{
     display: flex;
     column-gap: 70px;
 }
 
-.navLink{
+.navLinkTop{
     color: rgba(255, 255, 255, 0.7);
     transition: all 0.4s;
 }
 
-.navLink:hover{
+.navLinkTop:hover{
     color: rgba(255, 255, 255, 1);
     font-size: 20px;
 }
 
 @media (max-width: 650px){
-    .header_contenu{
+    .headerTop_contenu{
         flex-direction: column;
         padding: 25px 0;
         row-gap: 18px;
@@ -352,4 +352,47 @@ a{
         height: 60px;
         width: 60px;
     }
+
+    .headerBot{
+        background-color: rgba(0, 0, 0, 0.8);
+        position:fixed;
+        z-index: -1;
+        display: flex;
+        margin-left: 5px;
+    }
+
+}
+
+.headerBot{
+    background-color: rgba(0, 0, 0, 0.8);
+    position:fixed;
+    top: 0;
+    z-index: -1;
+    display: flex;
+    margin-left: 35vw;
+}
+
+.headerBot_contenu{
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:0 30px;
+}
+
+.navListBot{
+    display: flex;
+    column-gap: 70px;
+}
+
+.navLinkBot{
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.4s;
+}
+
+.navLinkBot:hover{
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
 }
