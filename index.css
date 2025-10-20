@@ -248,7 +248,7 @@ body {
     top: 0;
     left: 0;
     /*pour eviter que l'opacité sombre soit dérière les images*/
-    z-index: 10;
+    z-index: 20;
 }
 
 /* animations de changement d'image avec un fade in/fade out*/
@@ -309,9 +309,11 @@ a{
 
 .headerTop{
     background-color: rgb(0, 0, 0);
+    z-index: 10;
 }
 
 .headerTop_contenu{
+    z-index: 10;
     min-height: 60px;
     display: flex;
     align-items: center;
@@ -322,21 +324,25 @@ a{
 }
 
 .logo_img{
+    z-index: 10;
     width: 17%;
     height: 17%;
 }
 
 .navListTop{
+    z-index: 10;
     display: flex;
     column-gap: 70px;
 }
 
 .navLinkTop{
+    z-index: 10;
     color: rgba(255, 255, 255, 0.7);
     transition: all 0.4s;
 }
 
 .navLinkTop:hover{
+    z-index: 10;
     color: rgba(255, 255, 255, 1);
     font-size: 20px;
 }
@@ -346,30 +352,21 @@ a{
         flex-direction: column;
         padding: 25px 0;
         row-gap: 18px;
-    }
+    }   
 
     .logo_img{
         height: 60px;
         width: 60px;
     }
 
-    .headerBot{
-        background-color: rgba(0, 0, 0, 0.8);
-        position:fixed;
-        z-index: -1;
-        display: flex;
-        margin-left: 5px;
-    }
-
 }
 
 .headerBot{
     background-color: rgba(0, 0, 0, 0.8);
-    position:fixed;
+    position:sticky;
     top: 0;
-    z-index: -1;
+    z-index: 0;
     display: flex;
-    margin-left: 35vw;
 }
 
 .headerBot_contenu{
