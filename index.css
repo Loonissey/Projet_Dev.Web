@@ -309,7 +309,9 @@ a{
 
 .headerTop{
     background-color: rgb(0, 0, 0);
-    z-index: 10;
+    position: sticky;
+    top:0;
+    z-index: 1000;
 }
 
 .headerTop_contenu{
@@ -361,35 +363,3 @@ a{
 
 }
 
-.headerBot{
-    background-color: rgba(0, 0, 0, 0.8);
-    position:sticky;
-    top: 0;
-    z-index: 0;
-    display: flex;
-}
-
-.headerBot_contenu{
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding:0 30px;
-}
-
-.navListBot{
-    display: flex;
-    column-gap: 70px;
-}
-
-.navLinkBot{
-    color: rgba(255, 255, 255, 0.7);
-    transition: all 0.4s;
-}
-
-.navLinkBot:hover{
-    color: rgba(255, 255, 255, 1);
-    font-size: 20px;
-}
