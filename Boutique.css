@@ -8,6 +8,60 @@ body{
     background-color: var(--fond);
 }
 
+
+/*retire les points de la liste*/
+ul{
+    list-style: none;
+}
+
+/*retire les effects sur les liens*/
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+.headerTop{
+    background-color: rgb(0, 0, 0);
+    position: sticky;
+    top:0;
+    z-index: 1000;
+}
+
+.headerTop_contenu{
+    z-index: 10;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:0 30px
+}
+
+.logo_img{
+    z-index: 10;
+    width: 17%;
+    height: 17%;
+}
+
+.navListTop{
+    z-index: 10;
+    display: flex;
+    column-gap: 70px;
+}
+
+.navLinkTop{
+    z-index: 10;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.4s;
+}
+
+.navLinkTop:hover{
+    z-index: 10;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+}
+
 .image_article{
     width: 90%;
     height: 75%;
@@ -19,17 +73,15 @@ body{
     height: 1500px;
     background-color: aliceblue;
     margin: 15%;
-    box-sizing: border-box;
     padding: 0;
     background-color: var(--secondaire);
 }
 
 .section_bonbons{
-    
+    flex-direction: row;
 }
 .tout_le_contenu{
-    display: flex;
-    flex-direction: row;
+    
 }
 .article{
 
