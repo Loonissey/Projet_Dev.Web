@@ -131,9 +131,10 @@ p{
 }
 
 .histoire>img{
-    
+    display: flex;
     height: 300px;
-    float: right;
+    border-radius: 15px;
+    
 }
 
 .createur{
@@ -150,6 +151,22 @@ p{
         display: flex;
         justify-content: center;
         flex-direction: column;
+    }
+
+
+    .histoire>p{
+        margin-left: 60px;
+        margin-right: 60px;
+
+    }
+
+    .HisImg{
+        display: flex;
+        justify-content: center;
+        
+        border-radius: 15px;
+        margin: 20px;
+        
     }
 }
 .lien{
