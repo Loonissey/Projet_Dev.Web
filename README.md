@@ -6,8 +6,8 @@
 
 Page Acceuil : [RUFFIN Tom](mailto:tom.ruffin@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
 Page Boutique : [SEYDOU Loonis](mailto:loonis.seydou@edu.univ-fcomte.fr?subject=SAE_1_05_06)   
-Page Panier : [TUTIN Nathan](mailto:nathan.tutin@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
-Page A propos : [RUICHEK Ibtisseme](mailto:ibtisseme.ruichek@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
+Page Panier : [RUICHEK Ibtisseme](mailto:ibtisseme.ruichek@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
+Page A propos : [TUTIN Nathan](mailto:nathan.tutin@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
 
 # Présentation du projet
 
