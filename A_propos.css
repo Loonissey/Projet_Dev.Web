@@ -124,7 +124,7 @@ p {
 .histoire>p {
     margin-left: 150px;
     margin-right: 150px;
-    
+    text-align: justify;
 }
 
 .HisImg {
@@ -255,6 +255,28 @@ button{
 
 }
 
+.compte{
+    margin: 15px;
+}
+
+.map{
+    border-radius: 15px;
+    margin-left: 20%;
+    margin-top: 20px;
+    width: 1400px;
+}
+
+.loca{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.loca>p{
+    margin-left: 70px;
+    margin-right: 300px;
+    text-align: justify;
+}
 
 
 @media (max-width: 650px) {
@@ -273,8 +295,14 @@ button{
         display: flex;
         justify-content: center;
         flex-direction: column;
+        margin: 20vw
     }
 
+
+    .histoire{
+        display: flex;
+        flex-direction: column;
+    }
 
     .histoire>p {
         margin-left: 60px;
@@ -283,10 +311,17 @@ button{
     }
 
     .HisImg {
+        display: flex;
+        justify-content: center;
         margin-top: 40px;
-        margin-left: 15%;
+        margin-right: 10vw;
+        
     }
 
+    .cb{
+        display: flex;
+        flex-direction: column;
+    }
 
 }
 
