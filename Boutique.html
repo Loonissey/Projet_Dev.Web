@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique</title>
     <link rel="stylesheet" href="Boutique.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="headerTop">
@@ -30,88 +33,83 @@
             </nav>
         </div>
     </header>
-    <div class="tout_le_contenu">
-        <h1 class="titre_haut">La boutique</h1>
-        <div class="contenu_boutique">
-            <div class="section_bonbons">
-                <h1>Candy's</h1>
-                <div class="grille_articles">
-                    <div class="articles">
-                        <div>
-                            <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>
-                                Cana
-                            </h3>
-                            <h3>
-                                prix : 9.99€
-                            </h3>
-                            <h3>
-                                pochette de 1kg
-                            </h3>
-                            <p>
-                                <strong> 
-                                    composant : sucre/colorant artificiel naturel
-                                </strong>
-                            </p>
-                            <a href="panier.html">
-                                <button class="acheter_b">
-                                    acheter
-                                </button>
-                            </a>
+    <main>
+        <div class="tout_le_contenu">
+            <h1 class="titre_haut" data-text="La boutique">La boutique</h1>
+            <div class="contenu_boutique">
+                <div class="section_bonbons">
+                    <h1>Candy's</h1>
+                    <div class="grille_articles">
+                        <div class="articles">
+                            <div>
+                                <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
+                                <div class="info_article">
+                                    <h3>
+                                        Cana
+                                    </h3>
+                                    <h3 class="contenu_hover">
+                                    prix : 9.99€
+                                    </h3>
+                                    <h3 class="contenu_hover" >
+                                        pochette de 1kg
+                                    </h3>
+                                </div>
+                                <p class="description">
+                                    <strong> 
+                                        composant : sucre/colorant artificiel naturel
+                                    </strong>
+                                </p>
+                                <a href="panier.html">
+                                    <button class="acheter_b">
+                                        acheter
+                                    </button>
+                                </a>
+                            </div>
+                            <div>
+                                <h3 class="titre_article"></h3>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="titre_article"></h3>
+                        <div class="articles">
+                            <div>
+                                <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
+                                <div class="info_article">
+                                    <h3>Sweet Surprise</h3>
+                                    <h3>prix : 6.99€</h3>
+                                    <h3>pochette de 250g</h3>
+                                </div>
+                                <a href="panier.html">
+                                    <button class="acheter_b">acheter</button>
+                                </a>
+                            </div>
+                        </div>  
+                        <div class="articles">
+                            <div>
+                                <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
+                                <div class="info_article">
+                                    <h3>Candy Mix</h3>
+                                    <h3>prix : 8.99€</h3>
+                                    <h3>pochette de 500g</h3>
+                                </div>
+                                <a href="panier.html">
+                                    <button class="acheter_b">acheter</button>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="articles">
-                        <div>
-                            <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>
-                                exemple
-                            </h3>
-                            <h3>
-                                prix : 6.99€
-                            </h3>
-                            <h3>
-                                pochette de 250g
-                            </h3>
-                        </div>
-                        <div>
-                            <h3 class="titre_article"></h3>
-                        </div>
-                    </div>  
-                    <div class="articles">
-                        <div>
-                            <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>exemple</h3>
-                            <h3>
-                                prix : 8.99€
-                            </h3>
-                            <h3>
-                                pochette de 500g
-                            </h3>
-                        </div>
-                        <div>
-                        <h3 class="titre_article"></h3>
-                    </div>
-                    </div>
-                    <div class="articles">
-                        <div>
-                            <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>exemple</h3>
-                            <h3>
-                                prix : 4.99€
-                            </h3>
-                            <h3>
-                                pochette de 200g
-                            </h3>   
-                        </div>
-                        <div>
-                            <h3 class="titre_article"></h3>
+                        <div class="articles">
+                            <div>
+                                <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
+                                <div class="info_article">
+                                    <h3>Sugar Rush</h3>
+                                    <h3>prix : 10.99€</h3>
+                                    <h3>pochette de 1kg</h3>
+                                </div>
+                                <a href="panier.html">
+                                    <button class="acheter_b">acheter</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             
             <div class="section_gateau">
                 <h1>Cake's</h1>
@@ -119,41 +117,53 @@
                     <div class="articles">
                         <div>
                             <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>
-                                exemple
-                            </h3>
-                        </div>
-                        <div>
-                            <h3 class="titre_article"></h3>
+                            <div class="info_article">
+                                <h3>Chocolate Dream</h3>
+                                <h3>prix : 29.99€</h3>
+                                <h3>45g la part</h3>
+                            </div>
+                            <a href="panier.html">
+                                <button class="acheter_b">acheter</button>
+                            </a>
                         </div>
                     </div>
                     <div class="articles">
                         <div>
                             <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>
-                                exemple
-                            </h3>
-                        </div>
-                        <div>
-                            <h3 class="titre_article"></h3>
+                            <div class="info_article">
+                                <h3>Vanilla Paradise</h3>
+                                <h3>prix : 25.99€</h3>
+                                <h3>45g la part</h3>
+                            </div>
+                            <a href="panier.html">
+                                <button class="acheter_b">acheter</button>
+                            </a>
                         </div>
                     </div>  
                     <div class="articles">
                         <div>
                             <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>exemple</h3>
+                            <div class="info_article">
+                                <h3>Berry Blast</h3>
+                                <h3>prix : 35.99€</h3>
+                                <h3>45g la part</h3>
+                            </div>
+                            <a href="panier.html">
+                                <button class="acheter_b">acheter</button>
+                            </a>
                         </div>
-                        <div>
-                        <h3 class="titre_article"></h3>
-                    </div>
                     </div>
                     <div class="articles">
                         <div>
                             <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>exemple</h3>    
-                        </div>
-                        <div>
-                            <h3 class="titre_article"></h3>
+                            <div class="info_article">
+                                <h3>Caramel Delight</h3>
+                                <h3>prix : 39.99€</h3>
+                                <h3>45g la part</h3>
+                            </div>
+                            <a href="panier.html">
+                                <button class="acheter_b">acheter</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -165,41 +175,53 @@
                     <div class="articles">
                         <div>
                             <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>
-                                exemple
-                            </h3>
-                        </div>
-                        <div>
-                            <h3 class="titre_article"></h3>
+                            <div class="info_article">
+                                <h3>Power Mix</h3>
+                                <h3>prix : 12.99€</h3>
+                                <h3>pochette de 500g</h3>
+                            </div>
+                            <a href="panier.html">
+                                <button class="acheter_b">acheter</button>
+                            </a>
                         </div>
                     </div>
                     <div class="articles">
                         <div>
                             <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>
-                                exemple
-                            </h3>
-                        </div>
-                        <div>
-                            <h3 class="titre_article"></h3>
+                            <div class="info_article">
+                                <h3>Energy Dust</h3>
+                                <h3>prix : 8.99€</h3>
+                                <h3>pochette de 250g</h3>
+                            </div>
+                            <a href="panier.html">
+                                <button class="acheter_b">acheter</button>
+                            </a>
                         </div>
                     </div>  
                     <div class="articles">
                         <div>
                             <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>exemple</h3>
+                            <div class="info_article">
+                                <h3>Mega Boost</h3>
+                                <h3>prix : 14.99€</h3>
+                                <h3>pochette de 1kg</h3>
+                            </div>
+                            <a href="panier.html">
+                                <button class="acheter_b">acheter</button>
+                            </a>
                         </div>
-                        <div>
-                        <h3 class="titre_article"></h3>
-                    </div>
                     </div>
                     <div class="articles">
                         <div>
                             <img class="image_article" src="Images/Design_article.png" alt="images de fond articles">
-                            <h3>exemple</h3>    
-                        </div>
-                        <div>
-                            <h3 class="titre_article"></h3>
+                            <div class="info_article">
+                                <h3>Turbo Powder</h3>
+                                <h3>prix : 11.99€</h3>
+                                <h3>pochette de 500g</h3>
+                            </div>
+                            <a href="panier.html">
+                                <button class="acheter_b">acheter</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -209,7 +231,7 @@
         </div>
 
     </div>
-
+    </main>
     <footer class="footer">
         <div class="footer_container">
             <div class="footer_social">
