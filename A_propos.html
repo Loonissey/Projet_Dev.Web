@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -40,7 +41,7 @@
         </div>
     </header>
 
-
+<div class="all">
     <h1 class="title">A Propos de <br> DArk Sweets</h1>
 
 
@@ -116,13 +117,51 @@
 
 
 
-    <div class="formulaire">
+    <div class="contacter">
         <h1 class="titleCate">Pour nous Contacter</h1>
-
-
+        <div class="formulaire">
+            <h3>Email :</h3>
+            <input type="text" name="email" id="email" placeholder="Entrez votre adresse mail">
+            <h3>Nom utilisateur :</h3>
+            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom et prénom">
+            <h3>Mot de passe :</h3>
+            <input type="password" name="mdp" id="mdp" placeholder="Entrez votre mot de passe">
+            <h3>Carte Bancaire :</h3>
+            <input type="text" name="carte-bancaire" id="cb" placeholder="Code de Carte Bancaire">
+            <div class="cb">
+                <div class="cbtxt">
+                    <h3>Date d'expiration :</h3>
+                    <input type="text" name="Date-expiration" id="Date-expiration" placeholder="MM/AA">
+                </div>
+                <div class="cbtxt">
+                    <div class="cvv">
+                        <h3>CVV :</h3>
+                        <input type="number" name="cvv" id="cvv" placeholder="XXX">
+                    </div>
+                </div>
+            </div>
+            <h3>Message :</h3>
+            <textarea class="msg" name="Message" id="message" placeholder="Écriver votre message"></textarea>
+            <button>Envoyer</button>
+        </div>
     </div>
 
+    <div class="comte">
+        <h1 class="titleCate">Creer un compte</h1>
+        <div class="formulaire">
 
+            <h3>Nom utilisateur :</h3>
+            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom et prénom">
+
+            <h3>Email :</h3>
+            <input type="text" name="email" id="email" placeholder="Entrez votre adresse mail">
+            <h3>Confirmer email :</h3>
+            <input type="text" name="email" id="email" placeholder="Confirmer votre adresse mail">
+            <h3>Mot de passe :</h3>
+            <input type="password" name="mdp" id="mdp" placeholder="Entrez votre mot de passe">
+        </div>
+    </div>
+</div>
     <footer class="footer">
         <div class="footer_container">
             <div class="footer_social">
