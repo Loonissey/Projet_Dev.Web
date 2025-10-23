@@ -9,52 +9,51 @@
 }
 
 /*retire les points de la liste*/
-ul{
+ul {
     list-style: none;
 }
 
 /*retire les effects sur les liens*/
-a{
+a {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
 }
 
-.header{
-    background-color: rgba(0, 0, 0,1);
+.header {
+    background-color: rgba(0, 0, 0, 1);
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 1000;
 }
 
-.header_contenu{
-     z-index: 10;
+.header_contenu {
+    z-index: 10;
     min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    padding:0 30px
-    
+    padding: 0 30px
 }
 
-.logo_img{
+.logo_img {
     width: 17%;
     height: 17%;
 }
 
-.navList{
+.navList {
     display: flex;
     column-gap: 70px;
-    
+
 }
 
-.navLink{
+.navLink {
     color: rgba(255, 255, 255, 0.7);
     transition: all 0.4s;
 }
 
-.navLink:hover{
+.navLink:hover {
     color: rgba(255, 255, 255, 1);
     font-size: 20px;
 }
@@ -63,25 +62,26 @@ a{
 
 
 
-h1{
+h1 {
     font-size: 50px;
-    
+
     text-transform: uppercase;
-    
+
 }
-.title{
+
+.title {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
     margin: 20px;
-   
+
     padding: 10px;
     border-radius: 35px;
 
 }
 
-.titleCate{
+.titleCate {
     display: flex;
     justify-content: center;
     margin-top: 40px;
@@ -93,40 +93,50 @@ h1{
     margin-right: 15vw;
 }
 
-h1,p,h3{
+h1,
+p,
+h3 {
     color: #bbb9b9;
 }
 
 
-body{
+body {
     background-color: var(--fond);
 }
 
-p{
-   
+p {
+
     margin: 60px;
 }
 
 
-.titleCate{
+.titleCate {
     margin-left: 100px;
     padding: 20px;
-    
+
 }
 
-.histoire>p{
+.histoire {
+    display: flex;
+    flex-direction: row;
+}
+
+.histoire>p {
     margin-left: 150px;
     margin-right: 150px;
+
 }
 
-.histoire>img{
+.HisImg {
     display: flex;
+    justify-content: center;
     height: 300px;
     border-radius: 15px;
-    
+    margin-left: 10%;
+    margin-top: 40px;
 }
 
-.createur{
+.createur {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -136,13 +146,13 @@ p{
 
 }
 
-.lien{
+.lien {
     text-decoration: underline;
     color: blueviolet;
 }
 
 
-.fonda{
+.fonda {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -150,66 +160,65 @@ p{
     background-color: var(--primaire);
     box-shadow: 10px 10px var(--secondaire);
     border-radius: 25px;
-   
+
 }
 
-.imgCrea{
+.imgCrea {
     display: flex;
     justify-content: center;
     border-radius: 50%;
     height: 130px;
     width: 130px;
     margin-left: 50px;
-   
-   
+
+
 }
 
-.fonda:hover{
+.fonda:hover {
     margin-top: 30px;
 }
 
 
 
-.description>h3{
+.description>h3 {
     display: flex;
     justify-content: center;
-    
+
     padding: 10px;
-    
+
 }
 
-@media (max-width: 650px){
-    .header_contenu{
+@media (max-width: 650px) {
+    .header_contenu {
         flex-direction: column;
         padding: 25px 0;
         row-gap: 18px;
     }
 
-    .logo_img{
+    .logo_img {
         height: 60px;
         width: 60px;
     }
-    .createur{
+
+    .createur {
         display: flex;
         justify-content: center;
         flex-direction: column;
     }
 
 
-    .histoire>p{
+    .histoire>p {
         margin-left: 60px;
         margin-right: 60px;
 
     }
 
-    .HisImg{
-        display: flex;
-        justify-content: center;
-        
-        border-radius: 15px;
-        margin: 20px;
-        
+    .HisImg {
+        margin-top: 40px;
+        margin-left: 15%;
     }
+
+
 }
 
 .footer {
