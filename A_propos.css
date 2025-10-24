@@ -341,7 +341,7 @@ button{
 
 .map{
     border-radius: 15px;
-    margin-left: 20%;
+    margin-right: 20%;
     margin-top: 20px;
     width: 1400px;
 }
@@ -353,8 +353,8 @@ button{
 }
 
 .loca>p{
-    margin-left: 70px;
-    margin-right: 300px;
+    margin-right: 70px;
+    margin-left: 300px;
     text-align: justify;
 }
 
@@ -401,6 +401,25 @@ button{
     .cb{
         display: flex;
         flex-direction: column;
+        
+    }
+
+    .map{
+        
+        margin-left: 17%;
+        
+        width: 400px;
+    }
+
+    .loca{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .loca>p{
+        margin-left: 60px;
+        margin-right: 60px;
     }
 
 }

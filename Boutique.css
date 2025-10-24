@@ -598,83 +598,44 @@ mettre en avant et les faire sauter au yeux */
 .section_poudre .grille_articles {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 40px 30px;
-    padding: 30px 80px;
-    max-width: 1300px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 24px 20px;
+    max-width: 1200px;
     margin: 0 auto;
     justify-items: center;
+    align-items: start;
+    box-sizing: border-box;
 }
 
 .section_poudre .articles {
     position: relative;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 18px;
     border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
-.section_poudre .articles:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.section_poudre .articles:nth-child(2) {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.section_poudre .articles:nth-child(3) {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.section_poudre .articles:nth-child(4) {
-    grid-column: 4;
-    grid-row: 2;
-}
-
+/* lighter hover effect to avoid overflow on small screens */
 .section_poudre .articles:hover {
-    transform: translateY(-10px) scale(1.05) !important;
-    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-6px) scale(1.03);
+    border-color: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-.section_poudre .articles:nth-child(2)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
-    border-radius: 10px;
-    z-index: 10;
-    backdrop-filter: blur(3px);
-}
-
-.section_poudre .articles:nth-child(4)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
-    border-radius: 10px;
-    z-index: 10;
-    backdrop-filter: blur(3px);
-}
-
-/*gère la promotion de la'articles dans la catégorie des poudre de sucre*/
+/* Promotional banner for first item - all screen sizes */
 .section_poudre .articles:nth-child(1)::before {
     content: "-10%";
     position: absolute;
     top: 0;
     left: 5%;
     width: 90%;
-    height: 25px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -693,7 +654,21 @@ mettre en avant et les faire sauter au yeux */
     border-radius: 10px 10px 0 0;
 }
 
-/*gère les banière au desssus des articles non disponible pour le moment */
+/* Overlay and "BIENTÔT DISPONIBLE" labels for unavailable items - all screen sizes */
+.section_poudre .articles:nth-child(2)::before,
+.section_poudre .articles:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    border-radius: 10px;
+    z-index: 10;
+    backdrop-filter: blur(3px);
+}
+
 .section_poudre .articles:nth-child(2)::after,
 .section_poudre .articles:nth-child(4)::after {
     content: "BIENTÔT DISPONIBLE";
@@ -702,13 +677,13 @@ mettre en avant et les faire sauter au yeux */
     left: 50%;
     transform: translate(-50%, -50%) rotate(-15deg);
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 900;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-align: center;
     z-index: 15;
     background: linear-gradient(135deg, var(--primaire), var(--fond));
-    padding: 15px 25px;
+    padding: 12px 20px;
     border: 3px solid rgba(255, 255, 255, 0.4);
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.1);
@@ -716,10 +691,38 @@ mettre en avant et les faire sauter au yeux */
     animation: pulse 2s infinite;
 }
 
-.section_poudre .articles.unavailable .acheter_b {
-    opacity: 0.3;
-    pointer-events: none;
-    cursor: not-allowed;
+/* Mobile responsive adjustments for labels */
+@media (max-width: 650px) {
+    .section_poudre .articles:nth-child(1)::before {
+        font-size: 11px;
+        height: 24px;
+        letter-spacing: 1px;
+    }
+    
+    .section_poudre .articles:nth-child(2)::after,
+    .section_poudre .articles:nth-child(4)::after {
+        font-size: 14px;
+        padding: 8px 15px;
+        letter-spacing: 1px;
+    }
+}
+
+/* decorative overlays / labels for specific items: keep but only on very wide screens */
+@media (min-width: 1201px) {
+
+    /* Keep staggered layout only on very wide screens */
+    .section_poudre .grille_articles {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: auto;
+        gap: 40px 30px;
+        padding: 30px 80px;
+        justify-items: center;
+    }
+
+    .section_poudre .articles:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .section_poudre .articles:nth-child(2) { grid-column: 2; grid-row: 2; }
+    .section_poudre .articles:nth-child(3) { grid-column: 3; grid-row: 1; }
+    .section_poudre .articles:nth-child(4) { grid-column: 4; grid-row: 2; }
 }
 
 .section_gateau h1:hover {
