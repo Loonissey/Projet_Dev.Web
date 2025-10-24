@@ -438,3 +438,280 @@ td img {
     justify-content: flex-end;
   }
 }
+
+/* --------- STYLE PANIER REVISITÉ --------- */
+
+/* Mise en page globale */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  background-color: #1c1848;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+}
+
+/* Tableau produits */
+table {
+  width: 70%;
+  border-collapse: collapse;
+  color: white;
+}
+
+th {
+  text-align: left;
+  font-size: 1.1em;
+  padding-bottom: 15px;
+  color: #c3b8ff;
+  border-bottom: 2px solid #c3b8ff;
+}
+
+td {
+  padding: 20px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.produit-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.produit-info img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #c3b8ff;
+}
+
+.quantite input {
+  width: 60px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #c3b8ff;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+}
+
+.supprimer {
+  background: transparent;
+  border: 1px solid #ff5f5f;
+  color: #ff5f5f;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.supprimer:hover {
+  background-color: #ff5f5f;
+  color: white;
+}
+
+/* Bloc récapitulatif */
+.resume {
+  width: 28%;
+  background: white;
+  border-radius: 16px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.resume p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
+  margin: 10px 0;
+  color: #312d5d;
+}
+
+.total {
+  border-top: 2px solid #282454;
+  margin-top: 15px;
+  padding-top: 15px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #0a8a24;
+}
+
+.payer {
+  width: 100%;
+  margin-top: 25px;
+  background-color: #312d5d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1.1em;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.payer:hover {
+  background-color: #1c1848;
+  transform: translateY(-2px);
+}
+
+/* ------- TITRES ------- */
+h1 {
+  text-align: center;
+  font-size: 2.4em;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: #eae8ff;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+/* ------- Recommandations ------- */
+.recommandations {
+  margin-top: 80px;
+  background-color: #312d5d;
+  border-radius: 15px;
+  padding: 40px 30px;
+  color: white;
+}
+
+.recommandations h2 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  color: #c3b8ff;
+  text-align: center;
+}
+
+/* ------- Cartes produits ------- */
+.carte {
+  background: white;
+  color: #312d5d;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.carte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.carte button {
+  background-color: #312d5d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.carte button:hover {
+  background-color: #1c1848;
+}
+
+/* ------- Responsive ------- */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .resume {
+    width: 100%;
+  }
+}
+
+/* === CARROUSEL PLEINE LARGEUR === */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  border-bottom: 4px solid #312d5d;
+  border-top: 4px solid #312d5d;
+}
+
+.hero-carousel .slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slideAnimation 15s infinite;
+}
+
+.hero-carousel .slide {
+  flex: 1 0 100%;
+}
+
+.hero-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+  transition: transform 1.2s ease;
+}
+
+.hero-carousel:hover img {
+  transform: scale(1.05);
+}
+
+/* Animation du carrousel */
+@keyframes slideAnimation {
+  0% { transform: translateX(0); }
+  30% { transform: translateX(0); }
+  35% { transform: translateX(-100%); }
+  65% { transform: translateX(-100%); }
+  70% { transform: translateX(-200%); }
+  100% { transform: translateX(-200%); }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .hero-carousel {
+    height: 200px;
+  }
+}
+
+.payer {
+  background: linear-gradient(135deg, #3f2b96, #a8c0ff);
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.payer:hover {
+  transform: scale(1.05);
+}
+
+.payer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
