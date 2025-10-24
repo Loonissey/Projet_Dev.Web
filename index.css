@@ -350,7 +350,12 @@ a{
     font-size: 20px;
 }
 
-@media (max-width: 650px){
+@media (max-width: 767px){
+    
+        .content{
+            font-size: 50%;
+        }
+    
     .headerTop_contenu{
         flex-direction: column;
         padding: 25px 0;
@@ -380,6 +385,9 @@ a{
         justify-content: flex-end;
     }
 
+    .contenu_container{
+        display: none;
+    }
 }
 
 .titleContainer{
@@ -436,6 +444,10 @@ a{
 .footer_social_icon img {
     width: 30px;
     height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .footer_social_icon img:hover{
@@ -470,15 +482,20 @@ a{
     border-radius: 25px;
     margin-left: 15vw;
     margin-right: 15vw;
+    width: 26vw;
+    height: 61vh;
+    margin-bottom: 5vh;
 }
 
 .texte_intitule{
     color: #d1d0d0;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .temp {
+    display: flex;
+    justify-content: center;
     position: relative;
     top: 0;
     left: 0;

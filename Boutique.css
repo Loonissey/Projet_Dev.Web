@@ -8,8 +8,15 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--fond);
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 ul {
@@ -37,6 +44,80 @@ a {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 30px;
+}
+
+/*Bouton panier flottant fixe
+config pour suivre la page lors de 
+la descente à des fin de praticité */
+.cart-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 1001;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.cart-icon:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.8);
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cart-icon .material-symbols-outlined {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* Bouton retour en haut */
+.scroll-to-top {
+    position: fixed;
+    bottom: 110px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primaire), var(--fond));
+    color: white;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.scroll-to-top .material-symbols-outlined {
+    font-size: 32px;
+    font-weight: 600;
 }
 
 .logo_img{
@@ -151,15 +232,16 @@ a {
 .image_article {
     width: 75%;
     height: 15%;
-    transition: transform 0.3s;
+    transition: transform 0.4s ease, filter 0.3s ease;
     position: relative;
+    filter: brightness(0.95);
 }
 
 .image_article:hover {
-    -ms-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-    filter: blur(2px);
+    -ms-transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .description {
@@ -237,69 +319,413 @@ a {
     max-width: 1400px;
     margin: 5% auto 15% auto;
     padding: 20px;
-    background-color: var(--secondaire);
+    background-color: var(--fond);
     border: 2px solid var(--primaire);
+    border-radius: 25px;
+    box-shadow: 15px 15px var(--secondaire);
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
 }
 
+/*gère les bouton acheter et son animation au passage de la souris*/
 .acheter_b {
     margin: 15px auto;
     width: 160px;
     height: 40px;
-    background-color: var(--primaire);
+    background: linear-gradient(135deg, var(--primaire), var(--fond));
     line-height: 40px;
-    border-radius: 40px;
+    border-radius: 8px;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
     text-transform: uppercase;
     text-decoration: none;
     font-family: "Google Sans Code", monospace;
     letter-spacing: 4px;
     font-size: 11px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.acheter_b::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+/* permet que l'effet brillant repasse quand le bouton acheté n'est plus sous la souris*/
+.acheter_b:hover::before {
+    left: 100%;
 }
 
 .acheter_b:hover {
     color: #fff;
-    background-color: var(--fond);
-    border-color: rgba(255, 255, 255, 0.6);
-    letter-spacing: 6px;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--fond), var(--primaire));
+    border-color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 5px;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-.section_bonbons,
-.section_gateau,
-.section_poudre{
+.section_bonbons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 25px;
+    margin-bottom: 50px;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--secondaire),
+        var(--secondaire) 10px,
+        var(--primaire) 10px,
+        var(--primaire) 20px
+    );
+    padding: 40px 30px;
+    margin-left: -30px;
+    margin-right: -30px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.section_bonbons::before {
+    content: "⚠ LIMITED EDITION ⚠";
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: linear-gradient(135deg, var(--primaire), var(--fond));
+    color: rgba(255, 255, 255, 0.9);
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    animation: blink 1.5s infinite;
+    text-transform: uppercase;
+}
+
+.section_bonbons::after {
+    content: "🔥 STOCK LIMITÉ 🔥";
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--primaire), var(--fond));
+    color: rgba(255, 255, 255, 0.9);
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    animation: blink 1.5s infinite 0.75s;
+}
+
+
+/*créer un effet de zoom dézomme sur les deux titre stock limité et limited edition pour les 
+mettre en avant et les faire sauter au yeux */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(0.95);
+    }
+}
+
+.section_poudre {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 50px;
+    position: relative;
+    padding: 40px 30px;
+    background-color: var(--primaire);
+    margin-left: -30px;
+    margin-right: -30px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+.section_poudre::before {
+    content: "💊 COMING SOON 💊";
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    background: linear-gradient(135deg, var(--primaire), var(--fond));
+    color: rgba(255, 255, 255, 0.9);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    animation: float 3s ease-in-out infinite;
+    z-index: 10;
+}
+
+/* permet cette effet de flotaison de coming soon en le faisait aller de haut en bas*/
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.section_gateau {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     margin-bottom: 50px;
+    background: linear-gradient(180deg, var(--primaire) 0%, var(--secondaire) 100%);
+    padding: 40px 30px;
+    margin-left: -30px;
+    margin-right: -30px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.section_bonbons h1,
-.section_gateau h1,
-.section_poudre h1 {
+
+.section_gateau::before {
+    content: "⭐ PREMIUM SELECTION ⭐";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primaire), var(--fond));
+    color: rgba(255, 255, 255, 0.9);
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.section_bonbons h1 {
     width: calc(100% - 40px);
     text-align: center;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 36px;
     letter-spacing: 3px;
     text-transform: uppercase;
     padding: 15px 20px;
-    margin: 20px 20px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 20px 10px 20px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
     position: relative;
     font-family: "Google Sans Code", monospace;
     font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-.section_bonbons h1:hover,
-.section_gateau h1:hover,
-.section_glace h1:hover,
+.section_poudre h1 {
+    width: calc(100% - 40px);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 36px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    margin: 20px 20px 10px 20px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    font-family: "Google Sans Code", monospace;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
 .section_poudre h1:hover {
-    color: rgba(255, 255, 255, 1);
+    color: #fff;
     border-bottom-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.section_gateau h1 {
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 38px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 20px;
+    margin: 25px 0 30px 0;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    font-family: "Google Sans Code", monospace;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.section_gateau h1::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.section_bonbons h1:hover {
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.section_poudre .grille_articles {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 40px 30px;
+    padding: 30px 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.section_poudre .articles {
+    position: relative;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.section_poudre .articles:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.section_poudre .articles:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.section_poudre .articles:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.section_poudre .articles:nth-child(4) {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.section_poudre .articles:hover {
+    transform: translateY(-10px) scale(1.05) !important;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.section_poudre .articles:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    border-radius: 10px;
+    z-index: 10;
+    backdrop-filter: blur(3px);
+}
+
+.section_poudre .articles:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    border-radius: 10px;
+    z-index: 10;
+    backdrop-filter: blur(3px);
+}
+
+/*gère la promotion de la'articles dans la catégorie des poudre de sucre*/
+.section_poudre .articles:nth-child(1)::before {
+    content: "-10%";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff6b6b, #ff0000);
+    color: white;
+    font-weight: 900;
+    font-size: 13px;
+    z-index: 10;
+    box-shadow: 0 3px 8px rgba(255, 0, 0, 0.6);
+    letter-spacing: 2px;
+    border-top: 2px solid rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+    opacity: 1 !important;
+    pointer-events: none !important;
+    text-transform: uppercase;
+    border-radius: 10px 10px 0 0;
+}
+
+/*gère les banière au desssus des articles non disponible pour le moment */
+.section_poudre .articles:nth-child(2)::after,
+.section_poudre .articles:nth-child(4)::after {
+    content: "BIENTÔT DISPONIBLE";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-align: center;
+    z-index: 15;
+    background: linear-gradient(135deg, var(--primaire), var(--fond));
+    padding: 15px 25px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.section_poudre .articles.unavailable .acheter_b {
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.section_gateau h1:hover {
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 .grille_articles {
@@ -311,12 +737,254 @@ a {
     padding: 20px;
 }
 
+.section_gateau .grille_articles {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 40px;
+    padding: 20px 80px 30px 80px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.section_gateau .articles {
+    background: linear-gradient(145deg, var(--primaire), var(--fond));
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/*gére les banière promotionnel au dessus des articles concerné*/
+
+.section_gateau .articles:nth-child(2)::before {
+    content: "-20%";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff6b6b, #ff0000);
+    color: white;
+    font-weight: 900;
+    font-size: 13px;
+    z-index: 10;
+    box-shadow: 0 3px 8px rgba(255, 0, 0, 0.6);
+    letter-spacing: 2px;
+    border-top: 2px solid rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+    opacity: 1 !important;
+    pointer-events: none !important;
+    text-transform: uppercase;
+    border-radius: 15px 15px 0 0;
+}
+
+.section_gateau .articles {
+    transform: none !important;
+    transition: transform 0.3s ease;
+}
+
+.section_gateau .articles:hover {
+    transform: translateY(-15px) scale(1.05) !important;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+.section_gateau .info_article {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.section_gateau .info_article:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/*gère les articles de la section bonbons et leur taille */
+.section_bonbons .articles {
+    position: relative;
+    transition: all 0.3s ease;
+    flex: 0 1 220px;
+    max-width: 250px;
+}
+
+/* créé l'effet de non linéatité des articles dans la catégorie candy's
+se qui case la symétrie de la boutique et les mette en avant */
+.section_bonbons .articles:nth-child(1) {
+    transform: rotate(-3deg) translateY(-15px);
+}
+
+.section_bonbons .articles:nth-child(2) {
+    transform: rotate(2deg) translateY(10px);
+}
+
+.section_bonbons .articles:nth-child(3) {
+    transform: rotate(-1.5deg) translateY(-5px);
+}
+
+.section_bonbons .articles:nth-child(4) {
+    transform: rotate(3deg) translateY(15px);
+}
+
+/*permet de replacer les artices au passage de la souris,
+correctement pour permettre une meileur lisibilité de celui qui est pointé par 
+la souris*/
+.section_bonbons .articles:hover {
+    transform: rotate(0deg) translateY(-20px) scale(1.08) !important;
+    z-index: 20;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.section_bonbons .articles::after {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primaire), var(--fond));
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 11px;
+    z-index: 5;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section_bonbons .articles:nth-child(1)::after {
+    content: "Stock: 23";
+}
+
+.section_bonbons .articles:nth-child(1)::before {
+    content: "-15%";
+    position: absolute;
+    top: 35px;
+    left: 10%;
+    width: 80%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff6b6b, #ff0000);
+    color: white;
+    font-weight: 900;
+    font-size: 13px;
+    z-index: 10;
+    box-shadow: 0 3px 8px rgba(255, 0, 0, 0.6);
+    letter-spacing: 2px;
+    border-top: 2px solid rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+    opacity: 1 !important;
+    pointer-events: none !important;
+    text-transform: uppercase;
+}
+
+@keyframes promoShake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+.section_bonbons .articles:nth-child(2)::after {
+    content: "Stock: 47";
+}
+
+.section_bonbons .articles:nth-child(3)::after {
+    content: "Stock: 12";
+    animation: urgentBlink 1s infinite;
+}
+
+.section_bonbons .articles:nth-child(4)::after {
+    content: "Stock: 8";
+    animation: urgentBlink 1s infinite;
+}
+
+@keyframes urgentBlink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+
+/*gère les notation des articles de la catégories premium selection */
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.stars {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.rating-value {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.reviews-count {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    font-style: italic;
+}
+
 .articles {
     flex: 0 1 calc(25% - 20px);
     min-width: 200px;
     max-width: 300px;
+    position: relative;
 }
 
+.articles::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.articles:hover::before {
+    opacity: 1;
+}
+
+/*gére le footer de la page*/
 
 .footer {
     background-color: var(--primaire);
@@ -368,6 +1036,17 @@ a {
         flex-direction: column;
         padding: 25px 0;
         row-gap: 18px;
+    }
+    
+    .cart-icon {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    
+    .cart-icon .material-symbols-outlined {
+        font-size: 28px;
     }   
 
     .logo_img{
@@ -387,15 +1066,37 @@ a {
     }
 
     .section_bonbons h1,
-    .section_gateau h1,
     .section_poudre h1 {
         font-size: 28px;
         width: calc(100% - 20px);
         margin: 15px 10px;
         padding: 10px;
     }
+    
+    .section_poudre h1 {
+        position: static;
+        transform: none;
+        left: auto;
+        width: calc(100% - 20px);
+        margin: 15px 10px 25px 10px;
+        font-size: 26px;
+        padding: 10px 20px;
+    }
+    
+    .section_poudre {
+        padding: 30px 10px 20px 10px;
+        margin-left: 0;
+        margin-right: 0;
+        transform: none;
+    }
+    
+    .section_poudre::before {
+        font-size: 10px;
+        padding: 4px 12px;
+        right: 10px;
+    }
 
-    .grille_articles{
+    .section_gateau h1 {
         gap: 15px;
         padding: 10px;
     }
@@ -419,6 +1120,91 @@ a {
         padding: 0 10%;
     }
 
+    .section_bonbons {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px 10px;
+        transform: none;
+    }
+    
+    .section_bonbons .articles,
+    .section_gateau .articles,
+    .section_poudre .articles {
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .section_bonbons::before,
+    .section_bonbons::after {
+        font-size: 9px;
+        padding: 3px 8px;
+        top: 10px;
+    }
+    
+    .section_bonbons::before {
+        left: 5px;
+    }
+    
+    .section_bonbons::after {
+        left: auto;
+        right: 5px;
+    }
+
+    .section_gateau {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 30px 10px 20px 10px;
+        transform: none;
+    }
+
+    .section_gateau .grille_articles {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 10px;
+    }
+
+    .section_gateau .articles {
+        padding: 15px;
+    }
+
+    .section_gateau::before {
+        font-size: 10px;
+        padding: 5px 15px;
+        letter-spacing: 1px;
+    }
+
+    .section_gateau h1 {
+        font-size: 26px;
+        margin: 15px 0 20px 0;
+    }
+
+    .section_gateau h1 {
+        font-size: 26px;
+        margin: 15px 0 20px 0;
+    }
+
+    .section_poudre .grille_articles {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+        justify-items: stretch;
+    }
+
+    .section_poudre .articles:nth-child(1),
+    .section_poudre .articles:nth-child(2),
+    .section_poudre .articles:nth-child(3),
+    .section_poudre .articles:nth-child(4) {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .section_poudre .articles:nth-child(2)::after,
+    .section_poudre .articles:nth-child(4)::after {
+        font-size: 12px;
+        padding: 8px 12px;
+        letter-spacing: 1px;
+    }
+
     .footer-container {
         flex-direction: column;
     }
@@ -433,8 +1219,8 @@ a {
 
 }
 
-@media (min-width: 651px) and (max-width: 1024px){
-    .contenu_boutique{
+@media (min-width: 651px) and (max-width: 1024px) {
+    .contenu_boutique {
         width: 90%;
     }
 
@@ -443,8 +1229,89 @@ a {
     }
 
     .section_bonbons h1,
-    .section_gateau h1,
     .section_poudre h1 {
         font-size: 32px;
+    }
+    
+    .section_poudre h1 {
+        position: static;
+        transform: none;
+        width: calc(100% - 40px);
+        margin: 15px 20px 25px 20px;
+        font-size: 30px;
+    }
+    
+    .section_poudre {
+        padding: 30px 15px 20px 15px;
+    }
+    
+    .section_poudre::before {
+        font-size: 11px;
+        right: 20px;
+    }
+
+    .section_gateau h1 {
+        padding: 30px 15px 20px 15px;
+    }
+
+    .section_gateau .grille_articles {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 10px 15px;
+    }
+
+    .section_gateau h1 {
+        font-size: 30px;
+    }
+
+    .section_bonbons {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px 10px;
+        transform: none;
+    }
+    
+    .section_bonbons .articles,
+    .section_gateau .articles,
+    .section_poudre .articles {
+        transform: none !important;  /*par précaution pour éviter que les animation ne */
+        animation: none !important;  /* vienne rentrer en conflit les une avec les autres*/
+    }
+
+    .section_bonbons::before,
+    .section_bonbons::after {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+    
+    .section_bonbons::before {
+        left: 15px;
+    }
+    
+    .section_bonbons::after {
+        right: 15px;
+    }
+    
+    .section_poudre {
+        margin-left: 0;
+        margin-right: 0;
+        transform: none;
+    }
+    
+    .section_poudre .grille_articles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 20px;
+        padding: 10px;
+    }
+
+    .section_poudre .articles {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    
+    .section_gateau {
+        margin-left: 0;
+        margin-right: 0;
+        transform: none;
     }
 }
