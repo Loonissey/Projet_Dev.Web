@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -64,12 +65,60 @@
 
     <br>
 
+    <div class="colonnes_container">
+        <div class="col promotions">
+            <h3 class="col_title">Nos promotions</h3>
+            <div class="col_images">
+                <div class="col_item">
+                    <img src="Images/bonbon_marijuana.jpg" alt="promo1">
+                    <div class="col_overlay">-20%</div>
+                </div>
+                <div class="col_item">
+                    <img src="Images/pistolet_cookie.jpg" alt="promo2">
+                    <div class="col_overlay">-35%</div>
+                </div>
+                <div class="col_item">
+                    <img src="Images/sucette.jpg" alt="promo3">
+                    <div class="col_overlay">-15%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col bestsellers">
+            <h3 class="col_title">Nos produits les plus vendus</h3>
+            <div class="col_images">
+                <div class="col_item">
+                    <img src="Images/gateau_coeur_boutique.jpg" alt="best1">
+                    <div class="col_overlay">Vendus: 120</div>
+                </div>
+                <div class="col_item">
+                    <img src="Images/pistolet_cookie.jpg" alt="best2">
+                    <div class="col_overlay">Vendus: 95</div>
+                </div>
+                <div class="col_item">
+                    <img src="Images/bonbon_marijuana.jpg" alt="best3">
+                    <div class="col_overlay">Vendus: 210</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="contenu_container">
-        <span class="texte_intitule"><b>Vous êtes intéressé? Faites un tour sur notre page Boutique !</b></span>
-        <div class="temp">
-            <img class="img_produit" src="Images/gateau_coeur_boutique.jpg" alt="produit" >
-            <a href="Boutique.html"><img class="par_dessus" src="Images/logo_magasin.png" alt="hover"></a>
-        </div>  
+        <div class="carte">
+            <span class="texte_intitule"><b>Vous êtes intéressé? Faites un tour sur notre page Boutique !</b></span>
+            <div class="temp">
+                <img class="img_produit" src="Images/gateau_coeur_boutique.jpg" alt="produit" >
+                <a class="par_dessus" href="Boutique.html"><span class="overlay_text">Voir la boutique</span></a>
+            </div>
+        </div>
+
+        <div class="carte">
+            <span class="texte_intitule"><b>Vous souhaitez en savoir plus sur nous ou notre histoire ?</b></span>
+            <div class="temp">
+                <img class="img_produit" src="Images/sucette.jpg" alt="produit-2" >
+                <a class="par_dessus" href="A_propos.html"><span class="overlay_text">En savoir plus</span></a>
+            </div>
+        </div>
     </div>
 
 
