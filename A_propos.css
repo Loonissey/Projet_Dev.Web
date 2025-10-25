@@ -409,7 +409,7 @@ p {
     border-radius: 50%;
     height: 130px;
     width: 130px;
-    margin-left: 50px;
+    margin-left: 30%;
 
 
 }
@@ -511,7 +511,7 @@ button {
 
 .map {
     border-radius: 15px;
-    margin-right: 20px;
+    margin-right: 60px;
     margin-top: 20px;
     width: 1400px;
 }
@@ -534,7 +534,7 @@ button {
 
 .loca>p {
     margin-right: 70px;
-    margin-left: 30px;
+    margin-left: 60px;
     text-align: justify;
 }
 
@@ -724,7 +724,7 @@ button {
 
     }
 
-    
+
     .formulaire {
         display: flex;
         justify-content: center;
@@ -761,14 +761,14 @@ button {
         margin-right: 60px;
     }
 
-    .star{
+    .star {
         display: flex;
         justify-content: center;
         flex-direction: column;
         width: 90%;
     }
 
-    .assa{
+    .assa {
         margin-left: 0;
     }
 
