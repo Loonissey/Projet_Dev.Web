@@ -62,20 +62,20 @@ h1,
 p,
 h3 {
     color: #bbb9b9;
-} 
+}
 
 h1 {
     font-size: 50px;
 
     text-transform: uppercase;
 
-} 
+}
 
 
 
 
 
-.title{
+.title {
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
@@ -113,51 +113,175 @@ h1 {
 }
 
 @keyframes glitch-1 {
-    0% { clip: rect(132px, auto, 101px, 30px); }
-    5% { clip: rect(17px, auto, 94px, 30px); }
-    10% { clip: rect(40px, auto, 66px, 30px); }
-    15% { clip: rect(87px, auto, 82px, 30px); }
-    20% { clip: rect(137px, auto, 61px, 30px); }
-    25% { clip: rect(34px, auto, 14px, 30px); }
-    30% { clip: rect(133px, auto, 74px, 30px); }
-    35% { clip: rect(76px, auto, 107px, 30px); }
-    40% { clip: rect(59px, auto, 130px, 30px); }
-    45% { clip: rect(29px, auto, 84px, 30px); }
-    50% { clip: rect(22px, auto, 67px, 30px); }
-    55% { clip: rect(67px, auto, 62px, 30px); }
-    60% { clip: rect(10px, auto, 105px, 30px); }
-    65% { clip: rect(78px, auto, 115px, 30px); }
-    70% { clip: rect(105px, auto, 13px, 30px); }
-    75% { clip: rect(15px, auto, 75px, 30px); }
-    80% { clip: rect(66px, auto, 39px, 30px); }
-    85% { clip: rect(133px, auto, 73px, 30px); }
-    90% { clip: rect(36px, auto, 128px, 30px); }
-    95% { clip: rect(68px, auto, 103px, 30px); }
-    100% { clip: rect(14px, auto, 100px, 30px); }
+    0% {
+        clip: rect(132px, auto, 101px, 30px);
+    }
+
+    5% {
+        clip: rect(17px, auto, 94px, 30px);
+    }
+
+    10% {
+        clip: rect(40px, auto, 66px, 30px);
+    }
+
+    15% {
+        clip: rect(87px, auto, 82px, 30px);
+    }
+
+    20% {
+        clip: rect(137px, auto, 61px, 30px);
+    }
+
+    25% {
+        clip: rect(34px, auto, 14px, 30px);
+    }
+
+    30% {
+        clip: rect(133px, auto, 74px, 30px);
+    }
+
+    35% {
+        clip: rect(76px, auto, 107px, 30px);
+    }
+
+    40% {
+        clip: rect(59px, auto, 130px, 30px);
+    }
+
+    45% {
+        clip: rect(29px, auto, 84px, 30px);
+    }
+
+    50% {
+        clip: rect(22px, auto, 67px, 30px);
+    }
+
+    55% {
+        clip: rect(67px, auto, 62px, 30px);
+    }
+
+    60% {
+        clip: rect(10px, auto, 105px, 30px);
+    }
+
+    65% {
+        clip: rect(78px, auto, 115px, 30px);
+    }
+
+    70% {
+        clip: rect(105px, auto, 13px, 30px);
+    }
+
+    75% {
+        clip: rect(15px, auto, 75px, 30px);
+    }
+
+    80% {
+        clip: rect(66px, auto, 39px, 30px);
+    }
+
+    85% {
+        clip: rect(133px, auto, 73px, 30px);
+    }
+
+    90% {
+        clip: rect(36px, auto, 128px, 30px);
+    }
+
+    95% {
+        clip: rect(68px, auto, 103px, 30px);
+    }
+
+    100% {
+        clip: rect(14px, auto, 100px, 30px);
+    }
 }
 
 @keyframes glitch-2 {
-    0% { clip: rect(129px, auto, 36px, 30px); }
-    5% { clip: rect(36px, auto, 4px, 30px); }
-    10% { clip: rect(85px, auto, 66px, 30px); }
-    15% { clip: rect(91px, auto, 91px, 30px); }
-    20% { clip: rect(148px, auto, 138px, 30px); }
-    25% { clip: rect(38px, auto, 122px, 30px); }
-    30% { clip: rect(69px, auto, 54px, 30px); }
-    35% { clip: rect(98px, auto, 71px, 30px); }
-    40% { clip: rect(146px, auto, 34px, 30px); }
-    45% { clip: rect(134px, auto, 43px, 30px); }
-    50% { clip: rect(102px, auto, 80px, 30px); }
-    55% { clip: rect(119px, auto, 44px, 30px); }
-    60% { clip: rect(106px, auto, 99px, 30px); }
-    65% { clip: rect(141px, auto, 74px, 30px); }
-    70% { clip: rect(20px, auto, 78px, 30px); }
-    75% { clip: rect(133px, auto, 79px, 30px); }
-    80% { clip: rect(78px, auto, 52px, 30px); }
-    85% { clip: rect(35px, auto, 39px, 30px); }
-    90% { clip: rect(67px, auto, 70px, 30px); }
-    95% { clip: rect(71px, auto, 103px, 30px); }
-    100% { clip: rect(83px, auto, 40px, 30px); }
+    0% {
+        clip: rect(129px, auto, 36px, 30px);
+    }
+
+    5% {
+        clip: rect(36px, auto, 4px, 30px);
+    }
+
+    10% {
+        clip: rect(85px, auto, 66px, 30px);
+    }
+
+    15% {
+        clip: rect(91px, auto, 91px, 30px);
+    }
+
+    20% {
+        clip: rect(148px, auto, 138px, 30px);
+    }
+
+    25% {
+        clip: rect(38px, auto, 122px, 30px);
+    }
+
+    30% {
+        clip: rect(69px, auto, 54px, 30px);
+    }
+
+    35% {
+        clip: rect(98px, auto, 71px, 30px);
+    }
+
+    40% {
+        clip: rect(146px, auto, 34px, 30px);
+    }
+
+    45% {
+        clip: rect(134px, auto, 43px, 30px);
+    }
+
+    50% {
+        clip: rect(102px, auto, 80px, 30px);
+    }
+
+    55% {
+        clip: rect(119px, auto, 44px, 30px);
+    }
+
+    60% {
+        clip: rect(106px, auto, 99px, 30px);
+    }
+
+    65% {
+        clip: rect(141px, auto, 74px, 30px);
+    }
+
+    70% {
+        clip: rect(20px, auto, 78px, 30px);
+    }
+
+    75% {
+        clip: rect(133px, auto, 79px, 30px);
+    }
+
+    80% {
+        clip: rect(78px, auto, 52px, 30px);
+    }
+
+    85% {
+        clip: rect(35px, auto, 39px, 30px);
+    }
+
+    90% {
+        clip: rect(67px, auto, 70px, 30px);
+    }
+
+    95% {
+        clip: rect(71px, auto, 103px, 30px);
+    }
+
+    100% {
+        clip: rect(83px, auto, 40px, 30px);
+    }
 }
 
 
@@ -193,12 +317,13 @@ p {
 
 
 .titleCate {
-    
+
     padding: 20px;
 
 }
 
-.histoire {
+.histoire,
+.avis {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -211,6 +336,23 @@ p {
     margin-right: 5vw;
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+.avis,
+.addAvis {
+    border: 3px solid var(--secondaire);
+}
+
+.allavis,
+.addAvis {
+    background-color: var(--primaire);
+    box-shadow: 10px 10px var(--secondaire);
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px 0;
+    border-radius: 25px;
 }
 
 .histoire>p {
@@ -274,7 +416,7 @@ p {
 
 
 
-.formulaire{
+.formulaire {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -282,27 +424,27 @@ p {
     margin-right: 30%;
     justify-content: center;
     margin-top: 40px;
-    padding: 25px ;
+    padding: 25px;
     background-color: var(--primaire);
     box-shadow: 10px 10px var(--secondaire);
     border-radius: 25px;
-   
+
     margin-top: 25px;
     margin-bottom: 25px;
-  
+
 }
 
 
 
 
-.cbtxt{
+.cbtxt {
     display: flex;
     flex-direction: column;
     margin: 20px;
 }
 
-.cb{
-    
+.cb {
+
     display: flex;
     flex-direction: row;
 }
@@ -329,7 +471,7 @@ input[type="number"] {
     margin: 10px 0;
 }
 
-button{
+button {
     padding: 10px;
     background-color: darkviolet;
     border-radius: 15px;
@@ -340,7 +482,7 @@ button{
     margin-top: 30px;
 }
 
-.msg{
+.msg {
     padding: 10px;
     border: 1px solid #eeeff5;
     border-radius: 5px;
@@ -360,21 +502,21 @@ button{
     padding: 5px;
 }
 
-.description>p{
+.description>p {
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
 
 
-.map{
+.map {
     border-radius: 15px;
     margin-right: 20px;
     margin-top: 20px;
     width: 1400px;
 }
 
-.loca{
+.loca {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -387,32 +529,32 @@ button{
     margin-right: 5vw;
     margin-top: 25px;
     margin-bottom: 25px;
-    
+
 }
 
-.loca>p{
+.loca>p {
     margin-right: 70px;
     margin-left: 30px;
     text-align: justify;
 }
 
 
-.avis{
+.avis {
     display: flex;
     flex-direction: row;
-    
+
 }
 
-.starglob{
+.starglob {
     display: flex;
     flex-direction: column;
-    margin-left: 20%;
+    margin-left: 10%;
     color: #bbb9b9;
-    margin-top: 5px;
-    margin-right: -5px;
+    margin-top: 50px;
+    margin-right: 5px;
 }
 
-.star>progress{
+.star>progress {
     display: flex;
     flex-direction: column;
     background-color: whitesmoke;
@@ -424,21 +566,21 @@ button{
 
 
 
-.titleAvis{
+.titleAvis {
     display: flex;
     justify-content: center;
     font-size: 40px;
 }
 
-.etoile{
+.etoile {
     width: 40px;
 }
 
-.star{
+.star {
     margin-right: 0px;
 }
 
-.assa{
+.assa {
     margin-left: 20%;
     color: gray;
     margin-top: 5px;
@@ -447,28 +589,28 @@ button{
 
 
 
-.exAvis{
+.exAvis {
     background-color: white;
     margin-right: 20%;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-top: 20px;
     border-radius: 10px;
 }
 
-.profile>img{
+.profile>img {
     height: 80px;
     width: 80px;
     border-radius: 50%;
     margin: 20px;
-    border: 3px  solid grey;
+    border: 3px solid grey;
 }
 
-.profile{
+.profile {
     display: flex;
     flex-direction: row;
 }
 
-.rate{
+.rate {
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -476,18 +618,18 @@ button{
     margin-top: 40px;
 }
 
-.eva{
+.eva {
     color: rgb(139, 139, 46);
 }
 
-.exAvis>p{
+.exAvis>p {
     font-size: 16px;
     color: black;
     margin-top: 0px;
     margin-bottom: 10px;
 }
 
-.obl{
+.obl {
     color: gray;
     text-decoration: underline;
     margin: 10px;
@@ -495,33 +637,46 @@ button{
     cursor: pointer;
 }
 
-.carousel{
+.carousel {
     width: 100%;
-    overflow-x: auto ;
+    overflow-x: auto;
     margin: 3em auto;
     display: flex;
-    gap: 1em;
+
+    margin-right: 10%;
 }
 
-.carousel::-webkit-scrollbar {
-    display: none;
+
+
+.exAvis {
+    flex: 0 0 45em;
 }
 
-.carousel::scroll-button(right){
-    content: '->';
-    border: none;
-    background-color: purple;
-    font-size: 3rem;
-    color: white;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    padding-bottom: .1em;
-    cursor: pointer;
+
+.selectStar {
+    display: flex;
+    flex-direction: row;
+    width: 20px;
+    margin-left: 20%;
+
 }
 
-.exAvis{
-    flex: 0 0 40em;
+.avismsg {
+    display: flex;
+
+    padding: 10px;
+    border: 1px solid #eeeff5;
+    border-radius: 5px;
+    height: 100px;
+    width: 70%;
+}
+
+.MsgAvis {
+    margin-left: 20%;
+}
+
+.buttonAvis {
+    margin-left: 40%;
 }
 
 @media (max-width: 650px) {
@@ -544,7 +699,7 @@ button{
     }
 
 
-    .histoire{
+    .histoire {
         display: flex;
         flex-direction: column;
     }
@@ -560,32 +715,72 @@ button{
         justify-content: center;
         margin-top: 40px;
         margin-right: 10vw;
-        
+
     }
 
-    .cb{
+    .cb {
         display: flex;
         flex-direction: column;
-        
+
     }
 
-    .map{
-        
+    
+    .formulaire {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 10%;
+        margin-right: 10%;
+        justify-content: center;
+        margin-top: 40px;
+        padding: 25px;
+        background-color: var(--primaire);
+        box-shadow: 10px 10px var(--secondaire);
+        border-radius: 25px;
+
+        margin-top: 25px;
+        margin-bottom: 25px;
+
+    }
+
+    .map {
+
         margin-left: 17%;
-        
+
         width: 400px;
     }
 
-    .loca{
+    .loca {
         display: flex;
         flex-direction: column;
-        
+
     }
 
-    .loca>p{
+    .loca>p {
         margin-left: 60px;
         margin-right: 60px;
     }
+
+    .star{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .assa{
+        margin-left: 0;
+    }
+
+    .avis {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .exAvis {
+        flex: 0 0 30em;
+    }
+
 
 }
 
