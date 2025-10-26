@@ -1399,50 +1399,6 @@ mettre en avant et les faire sauter au yeux */
 
 }
 
-/* Responsive très petits écrans au cas où */
-@media (max-width: 480px) {
-    .section_bonbons::before,
-    .section_bonbons::after {
-        font-size: 10px;
-        padding: 4px 10px;
-        letter-spacing: 0.5px;
-        top: -10px;
-        border-radius: 5px;
-    }
-    
-    .section_bonbons::before {
-        left: 3px;
-        content: "⚠ LTD ⚠";
-    }
-    
-    .section_bonbons::after {
-        right: 3px;
-        content: "🔥 LIMITÉ 🔥";
-    }
-
-    .section_poudre::before {
-        font-size: 10px;
-        padding: 6px 15px;
-        letter-spacing: 1px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: fit-content;
-        top: -12px;
-        content: "💊 COMING SOON 💊";
-        border-radius: 18px;
-        text-align: center;
-    }
-
-    .section_gateau::before {
-        font-size: 10px;
-        padding: 4px 12px;
-        letter-spacing: 1px;
-        top: -10px;
-        content: "⭐ PREMIUM ⭐";
-        border-radius: 20px;
-    }
-}
 
 /* Responsive tablette */
 
