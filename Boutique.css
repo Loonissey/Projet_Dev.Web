@@ -60,9 +60,7 @@ a {
 ========================================
 */
 
-/*Bouton panier flottant fixe
-config pour suivre la page lors de 
-la descente à des fin de praticité */
+/*Bouton panier flottant fixe suivi de la page */
 .cart-icon {
     position: fixed;
     bottom: 30px;
