@@ -830,3 +830,8 @@ td img {
    
   }
 }
+
+.footer_social_icon img:hover,
+.footer_social_icon img:focus-visible {
+    transform: scale(1.18);
+}
