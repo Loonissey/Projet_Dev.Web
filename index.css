@@ -452,15 +452,15 @@ a{
     margin-right: 7vw;
 }
 
-/* Colonnes centrales entre le texte et les cartes */
+
 .colonnes_container{
     display: flex;
     justify-content: center;
-    gap: 4vw;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    gap: 2rem;
+    max-width: 1200px; 
+    margin: 24px auto;
+    padding: 0 1.5rem;
+    align-items: flex-start;
 }
 
 .col{
@@ -468,10 +468,12 @@ a{
     box-shadow: 10px 10px var(--secondaire);
     border-radius: 16px;
     padding: 18px;
-    width: 32vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 1 0;
+    max-width: 520px; 
+    min-width: 220px;
 }
 
 .col_title{
@@ -488,7 +490,7 @@ a{
 }
 
 .col_images img{
-    width: 28vw;
+    width: 100%;
     max-width: 100%;
     height: auto;
     border-radius: 8px;
