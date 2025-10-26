@@ -658,6 +658,7 @@ td img {
   padding: 20px 0;
   text-align: center;
   border: var(--secondaire) 4px solid;
+   font-family: "Google Sans Code", monospace;
 }
 
 .footer_container {
@@ -826,5 +827,6 @@ td img {
 
   .footer_links {
     justify-content: flex-end;
+   
   }
 }
