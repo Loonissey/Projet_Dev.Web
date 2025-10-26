@@ -1,241 +1,278 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Votre panier</title>
-  <link rel="stylesheet" href="panier.css" />
-  <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-<body>
-  <header class="headerTop">
-    <div class="headerTop_contenu">
-      <a href="#" class="logo">
-        <img src="Images/logoblanc.png" alt="logo" class="logo_img">
-      </a>
-      <nav class="navTop">
-        <ul class="navListTop">
-          <li class="navItem">
-            <a href="index.html" class="navLinkTop">Accueil</a>
-          </li>
-          <li class="navItem">
-            <a href="Boutique.html" class="navLinkTop">Boutique</a>
-          </li>
-          <li class="navItem">
-            <a href="#" class="navLinkTop">Panier</a>
-          </li>
-          <li class="navItem">
-            <a href="A_propos.html" class="navLinkTop">À propos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Votre panier</title>
+    <link rel="stylesheet" href="panier.css" />
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
 
-  <!-- Bouton retour en haut -->
-  <button class="scroll-to-top" id="scrollToTop">
-    <span class="material-symbols-outlined">arrow_upward</span>
-  </button>
-
-  <!-- Carrousel hero -->
-  <div class="hero-carousel">
-    <div class="slides">
-      <div class="slide">
-        <img src="Images/sucette.jpg" alt="Bonbon marijuana">
+  <body>
+    <!-- ========== HEADER ========== -->
+    <header class="headerTop">
+      <div class="headerTop_contenu">
+        <a href="#" class="logo">
+          <img src="Images/logoblanc.png" alt="logo" class="logo_img">
+        </a>
+        <nav class="navTop">
+          <ul class="navListTop">
+            <li class="navItem">
+              <a href="index.html" class="navLinkTop">Accueil</a>
+            </li>
+            <li class="navItem">
+              <a href="Boutique.html" class="navLinkTop">Boutique</a>
+            </li>
+            <li class="navItem">
+              <a href="#" class="navLinkTop">Panier</a>
+            </li>
+            <li class="navItem">
+              <a href="A_propos.html" class="navLinkTop">À propos</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div class="slide">
-        <img src="Images/gateau_coeur_boutique.jpg" alt="pistolet cookie">
+    </header>
+
+    <!-- ========== BOUTON RETOUR EN HAUT ========== -->
+    <button class="scroll-to-top" id="scrollToTop">
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <!-- ========== CONTENU PRINCIPAL ========== -->
+    <main>
+      <!-- ========== CARROUSEL HERO ========== -->
+      <div class="hero-carousel">
+        <div class="slides">
+          <div class="slide">
+            <img src="Images/sucette.jpg" alt="Bonbon marijuana">
+          </div>
+          <div class="slide">
+            <img src="Images/gateau_coeur_boutique.jpg" alt="pistolet cookie">
+          </div>
+          <div class="slide">
+            <img src="Images/sucette.jpg" alt="Sucette">
+          </div>
+        </div>
       </div>
-      <div class="slide">
-        <img src="Images/sucette.jpg" alt="Sucette">
+
+      <!-- ========== TITRE PRINCIPAL ========== -->
+      <h1 class="title" data-text="Votre selection">VOTRE SELECTION</h1>
+
+      <!-- ========== CONTAINER PANIER ========== -->
+      <div class="container">
+        <!-- Tableau des produits -->
+        <table>
+          <thead>
+            <tr>
+              <th>Produit</th>
+              <th>Prix unitaire</th>
+              <th>Quantité</th>
+              <th>Prix total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="produit-info">
+                <img src="Images/gateau_coeur_boutique.jpg" alt="Mochis">
+                Heart Cake
+              </td>
+              <td>35,99 €</td>
+              <td class="quantite">
+                <input type="number" value="5">
+              </td>
+              <td>179,95 €</td>
+              <td>
+                <button class="supprimer">supprimer</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="produit-info">
+                <img src="Images/bonbon_marijuana.jpg" alt="Wasabi">
+                Marijua
+              </td>
+              <td>9,99 €</td>
+              <td class="quantite">
+                <input type="number" value="3">
+              </td>
+              <td>29,97 €</td>
+              <td>
+                <button class="supprimer">supprimer</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="produit-info">
+                <img src="Images/Bonbons_cana.jpg" alt="Sauce soja">
+                Candy Cana
+              </td>
+              <td>10,50 €</td>
+              <td class="quantite">
+                <input type="number" value="1">
+              </td>
+              <td>10,50 €</td>
+              <td>
+                <button class="supprimer">supprimer</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="produit-info">
+                <img src="Images/meta_gâteau.jpg" alt="Riz gluant">
+                Meta Cake
+              </td>
+              <td>27,99 €</td>
+              <td class="quantite">
+                <input type="number" value="1">
+              </td>
+              <td>27,99 €</td>
+              <td>
+                <button class="supprimer">supprimer</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ========== RÉCAPITULATIF ========== -->
+        <div class="resume">
+          <p>
+            <span>Sous-total</span>
+            <span>248,81 €</span>
+          </p>
+          <p>
+            <span>TVA incluse de</span>
+            <span>8,40 €</span>
+          </p>
+          <p>
+            <span>Frais de livraison</span>
+            <span>0,84 €</span>
+          </p>
+          
+          <div class="total">
+            <span>Total</span>
+            <span>257,65 €</span>
+          </div>
+          
+          <div class="promo">
+            <label for="code-promo">Code promo</label>
+            <div class="promo-input">
+              <input type="text" id="code-promo" placeholder="Entrez votre code">
+              <button class="appliquer">Appliquer</button>
+            </div>
+            <p class="promo-message">* Réduction appliquée sur le total</p>
+          </div>
+
+          <button class="payer">Procéder au paiement</button>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <h1 class="title" data-text="Votre selection">VOTRE SELECTION</h1>
+      <!-- ========== SECTION RECOMMANDATIONS ========== -->
+      <section class="recommandations">
+        <h2>LES INDISPENSABLES A NE PAS MANQUER !</h2>
 
-  <div class="container">
-    <!-- Tableau des produits -->
-    <table>
-      <tr>
-        <th>Produit</th>
-        <th>Prix unitaire</th>
-        <th>Quantité</th>
-        <th>Prix total</th>
-        <th></th>
-      </tr>
+        <div class="carousel">
+          <button class="nav prev">&#8249;</button>
 
-      <tr>
-        <td class="produit-info">
-          <img src="Images/gateau_coeur_boutique.jpg" alt="Mochis">
-          Heart Cake
-        </td>
-        <td>35,99 €</td>
-        <td class="quantite"><input type="number" value="5"></td>
-        <td>179,95 €</td>
-        <td><button class="supprimer">supprimer</button></td>
-      </tr>
+          <div class="produits">
+            <div class="carte">
+              <img src="Images/bonbon_yeux.jpg" alt="Candy Eyes">
+              <p class="prix">6,99 €</p>
+              <h3>Candy Eyes</h3>
+              <button>Ajouter au panier</button>
+            </div>
 
-      <tr>
-        <td class="produit-info">
-          <img src="Images/bonbon_marijuana.jpg" alt="Wasabi">
-          Marijua
-        </td>
-        <td>9,99 €</td>
-        <td class="quantite"><input type="number" value="3"></td>
-        <td>29,97 €</td>
-        <td><button class="supprimer">supprimer</button></td>
-      </tr>
+            <div class="carte">
+              <img src="Images/poupé_vaudou_gateau.jpg" alt="Poupée Vaudou Cake">
+              <p class="prix">32,99 €</p>
+              <h3>Poupée Vaudou Cake</h3>
+              <button>Ajouter au panier</button>
+            </div>
 
-      <tr>
-        <td class="produit-info">
-          <img src="Images/Bonbons_cana.jpg" alt="Sauce soja">
-          Candy Cana
-        </td>
-        <td>10,50 €</td>
-        <td class="quantite"><input type="number" value="1"></td>
-        <td>10,50 €</td>
-        <td><button class="supprimer">supprimer</button></td>
-      </tr>
+            <div class="carte">
+              <img src="Images/reglis_bonbons.jpg" alt="Pill of Keta">
+              <p class="prix">10,99 €</p>
+              <h3>Pill of Keta</h3>
+              <button>Ajouter au panier</button>
+            </div>
 
-      <tr>
-        <td class="produit-info">
-          <img src="Images/meta_gâteau.jpg" alt="Riz gluant">
-          Meta Cake
-        </td>
-        <td>27,99 €</td>
-        <td class="quantite"><input type="number" value="1"></td>
-        <td>27,99 €</td>
-        <td><button class="supprimer">supprimer</button></td>
-      </tr>
-    </table>
+            <div class="carte">
+              <img src="Images/cana_gateau.jpg" alt="Cana Cake">
+              <p class="prix">39,99 €</p>
+              <h3>Cana Cake</h3>
+              <button>Ajouter au panier</button>
+            </div>
 
-    <!-- Récapitulatif -->
-    <div class="resume">
-      <p><span>Sous-total</span><span>248,81 €</span></p>
-      <p><span>TVA incluse de</span><span>8,40 €</span></p>
-      <p><span>Frais de livraison</span><span>0,84 €</span></p>
-      <div class="total">
-        <span>Total</span>
-        <span>257,65 €</span>
+            <div class="carte">
+              <img src="Images/gateau_cerveau_boutique.jpg" alt="Brain Cake">
+              <p class="prix">29,99 €</p>
+              <h3>Brain Cake</h3>
+              <button>Ajouter au panier</button>
+            </div>
+          </div>
+
+          <button class="nav next">&#8250;</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_social">
+          <a href="#" class="footer_social_icon">
+            <img src="Images/instagram_logo.png" alt="Instagram">
+          </a>
+          <a href="#" class="footer_social_icon">
+            <img src="Images/facebook_logo.png" alt="Facebook">
+          </a>
+          <a href="#" class="footer_social_icon">
+            <img src="Images/discord_logo.png" alt="Discord">
+          </a>
+        </div>
+        <div class="footer_links">
+          <a href="#" class="footer_link">Conditions générales</a>
+          <a href="#" class="footer_link">Politique de confidentialité</a>
+          <a href="A_propos.html" class="footer_link">Contactez nous</a>
+          <a href="A_propos.html" class="footer_link">À propos</a>
+        </div>
       </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+      // ========== BOUTON RETOUR EN HAUT ==========
+      const scrollToTopBtn = document.getElementById('scrollToTop');
       
-      <div class="promo">
-        <label for="code-promo">Code promo</label>
-        <div class="promo-input">
-          <input type="text" id="code-promo" placeholder="Entrez votre code">
-          <button class="appliquer">Appliquer</button>
-        </div>
-        <p class="promo-message">* Réduction appliquée sur le total</p>
-      </div>
-
-      <button class="payer">Procéder au paiement</button>
-    </div>
-  </div>
-
-  <!-- Section Recommandations -->
-  <section class="recommandations">
-    <h2>LES INDISPENSABLES A NE PAS MANQUER !</h2>
-
-    <div class="carousel">
-      <button class="nav prev">&#8249;</button>
-
-      <div class="produits">
-        <div class="carte">
-          <img src="Images/bonbon_yeux.jpg" alt="Candy Eyes">
-          <p class="prix">6,99 €</p>
-          <h3>Candy Eyes</h3>
-          <button>Ajouter au panier</button>
-        </div>
-
-        <div class="carte">
-          <img src="Images/poupé_vaudou_gateau.jpg" alt="Poupée Vaudou Cake">
-          <p class="prix">32,99 €</p>
-          <h3>Poupée Vaudou Cake</h3>
-          <button>Ajouter au panier</button>
-        </div>
-
-        <div class="carte">
-          <img src="Images/reglis_bonbons.jpg" alt="Pill of Keta">
-          <p class="prix">10,99 €</p>
-          <h3>Pill of Keta</h3>
-          <button>Ajouter au panier</button>
-        </div>
-
-        <div class="carte">
-          <img src="Images/cana_gateau.jpg" alt="Cana Cake">
-          <p class="prix">39,99 €</p>
-          <h3>Cana Cake</h3>
-          <button>Ajouter au panier</button>
-        </div>
-
-       <div class="carte">
-          <img src="Images/gateau_cerveau_boutique.jpg" alt="Brain Cake">
-          <p class="prix">29,99 €</p>
-          <h3>Brain Cake</h3>
-          <button>Ajouter au panier</button>
-        </div>
-      </div>
-
-      <button class="nav next">&#8250;</button>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer_container">
-      <div class="footer_social">
-        <a href="#" class="footer_social_icon">
-          <img src="Images/instagram_logo.png" alt="Instagram">
-        </a>
-        <a href="#" class="footer_social_icon">
-          <img src="Images/facebook_logo.png" alt="Facebook">
-        </a>
-        <a href="#" class="footer_social_icon">
-          <img src="Images/discord_logo.png" alt="Discord">
-        </a>
-      </div>
-      <div class="footer_links">
-        <a href="#" class="footer_link">Conditions générales</a>
-        <a href="#" class="footer_link">Politique de confidentialité</a>
-        <a href="A_propos.html" class="footer_link">Contactez nous</a>
-        <a href="A_propos.html" class="footer_link">À propos</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // ========== BOUTON RETOUR EN HAUT ==========
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.add('show');
-      } else {
-        scrollToTopBtn.classList.remove('show');
-      }
-    });
-    
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add('show');
+        } else {
+          scrollToTopBtn.classList.remove('show');
+        }
       });
-    });
+      
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
 
-    // ========== CARROUSEL RECOMMANDATIONS ==========
-    document.addEventListener('DOMContentLoaded', () => {
-      const prev = document.querySelector('.nav.prev');
-      const next = document.querySelector('.nav.next');
-      const produits = document.querySelector('.produits');
+      // ========== CARROUSEL RECOMMANDATIONS ==========
+      document.addEventListener('DOMContentLoaded', () => {
+        const prev = document.querySelector('.nav.prev');
+        const next = document.querySelector('.nav.next');
+        const produits = document.querySelector('.produits');
 
-      if (prev && next && produits) {
-        prev.onclick = () => produits.scrollBy({ left: -300, behavior: 'smooth' });
-        next.onclick = () => produits.scrollBy({ left: 300, behavior: 'smooth' });
-      }
-    });
-  </script>
-
-</body>
+        if (prev && next && produits) {
+          prev.onclick = () => produits.scrollBy({ left: -300, behavior: 'smooth' });
+          next.onclick = () => produits.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+      });
+    </script>
+  </body>
 </html>
