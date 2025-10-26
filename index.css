@@ -452,15 +452,16 @@ a{
     margin-right: 7vw;
 }
 
-/* Colonnes centrales entre le texte et les cartes */
 .colonnes_container{
     display: flex;
     justify-content: center;
-    gap: 4vw;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    gap: 2rem;
+    max-width: 1200px; 
+    margin: 24px auto;
+    padding: 0 1.5rem;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
 }
 
 .col{
@@ -468,10 +469,12 @@ a{
     box-shadow: 10px 10px var(--secondaire);
     border-radius: 16px;
     padding: 18px;
-    width: 32vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 1 0;
+    max-width: 520px; 
+    min-width: 220px;
 }
 
 .col_title{
@@ -488,14 +491,13 @@ a{
 }
 
 .col_images img{
-    width: 28vw;
+    width: 100%;
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     border: 6px solid var(--secondaire);
     display: block;
 }
-
 
 .col_item{
     position: relative;
@@ -605,11 +607,11 @@ a{
     align-items: flex-start;
     flex-direction: row;
     gap: 4vw;
-    margin-top: 40px;
     padding: 25px 0;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    margin-bottom: 5vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    position: relative;
+    z-index: 1;
 }
 
 .carte{
@@ -763,3 +765,157 @@ a{
     }
 }
 
+.produits_fond {
+    background: linear-gradient(135deg, 
+        var(--primaire) 0%, 
+        var(--secondaire) 40%,
+        var(--fond) 100%
+    );
+    border-radius: 30px;
+    padding: 40px 25px;
+    margin: 60px 5vw 0 5vw;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 15px 25px rgba(0,0,0,0.4),
+        0 5px 10px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.produits_fond::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, 
+        rgba(255,255,255,0.15) 0%, 
+        rgba(255,255,255,0.05) 35%, 
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.produits_titre {
+    color: #d1d0d0;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.infos_fond {
+    background-color: var(--primaire);
+    background-image: 
+        linear-gradient(var(--secondaire) 1.5px, transparent 1.5px),
+        linear-gradient(to right, var(--secondaire) 1.5px, transparent 1.5px);
+    background-size: 50px 50px;
+    border-radius: 30px;
+    padding: 40px 25px;
+    margin: 60px 5vw 0 5vw;
+    position: relative;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+}
+
+.infos_fond::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, var(--primaire) 100%);
+    border-radius: 30px;
+}
+
+.infos_fond > * {
+    position: relative;
+    z-index: 1;
+}
+
+.infos_titre {
+    color: #d1d0d0;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .produits_fond,
+    .infos_fond {
+        margin: 40px 3vw 0 3vw;
+        padding: 20px 15px;
+    }
+
+    .produits_titre,
+    .infos_titre {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .produits_fond,
+    .infos_fond {
+        margin: 30px 2vw 0 2vw;
+        padding: 15px 10px;
+    }
+
+    .produits_titre,
+    .infos_titre {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+}
+
+.sources_conteneur {
+    display: flex;
+    justify-content: center;
+    margin: 40px 15vw;
+}
+
+.sources_carte {
+    background-color: var(--primaire);
+    box-shadow: 10px 10px var(--secondaire);
+    border-radius: 25px;
+    padding: 25px 40px;
+    width: 100%;
+}
+
+.sources_titre {
+    color: #d1d0d0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.sources_liste {
+    list-style-type: none;
+    padding: 0;
+    color: #d1d0d0;
+    text-align: center;
+}
+
+.sources_liste li {
+    margin: 10px 0;
+}
+
+@media (max-width: 1024px) {
+    .sources_conteneur {
+        margin: 40px 10vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .sources_conteneur {
+        margin: 40px 5vw;
+    }
+
+    .sources_carte {
+        padding: 20px;
+    }
+}

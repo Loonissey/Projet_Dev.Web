@@ -14,13 +14,9 @@
     box-sizing: border-box;
 }
 
-html {
-    overflow-x: hidden;
-}
-
 body {
     background-color: var(--fond);
-    overflow-x: hidden;
+    overflow-x: hidden; /* Masque le scroll horizontal uniquement */
     width: 100%;
     position: relative;
 }
@@ -64,9 +60,7 @@ a {
 ========================================
 */
 
-/*Bouton panier flottant fixe
-config pour suivre la page lors de 
-la descente à des fin de praticité */
+/*Bouton panier flottant fixe suivi de la page */
 .cart-icon {
     position: fixed;
     bottom: 30px;
@@ -298,7 +292,7 @@ la descente à des fin de praticité */
     opacity: 1;
 }
 
-/* Info box qui apparaît au hover */
+/* Info box qui apparaît au hover prix/quantité*/
 .hover_info {
     position: absolute;
     top: 50%;
@@ -338,7 +332,7 @@ la descente à des fin de praticité */
     letter-spacing: 0.5px;
 }
 
-/* le reesponsive pour les infos en hover sur les article */
+/* le responsive pour les infos en hover sur les article le prix/la quantité */
 @media (max-width: 650px) {
     .hover_info {
         padding: 10px 15px;
@@ -434,9 +428,8 @@ la descente à des fin de praticité */
     border: none;
     border-radius: 0;
     box-shadow: none;
-    overflow-x: hidden;
-    overflow-y: visible;
     position: relative;
+
 }
 
 /*gère les bouton acheter et son animation au passage de la souris*/
@@ -487,7 +480,7 @@ la descente à des fin de praticité */
 
 /*
 ========================================
-   SECTION BONBONS (CANDY'S)
+   SECTION BONBONS 
 ========================================
 */
 
@@ -620,7 +613,7 @@ mettre en avant et les faire sauter au yeux */
 
 /*
 ========================================
-  🎂 SECTION GATEAUX (CAKE'S)
+   SECTION GATEAUX 
 ========================================
 */
 
@@ -717,7 +710,7 @@ mettre en avant et les faire sauter au yeux */
 
 /*
 ========================================
-  📐 GRILLES & LAYOUTS D'ARTICLES
+   GRILLES Pour poudre 
 ========================================
 */
 
@@ -750,7 +743,7 @@ mettre en avant et les faire sauter au yeux */
 .section_poudre .articles:nth-child(4) {
     grid-column: 4;
     grid-row: 2;
-    margin-bottom: 0;
+
 }
 
 .section_poudre .articles {
@@ -797,7 +790,8 @@ mettre en avant et les faire sauter au yeux */
     border-radius: 10px 10px 0 0;
 }
 
-/* Overlay and "BIENTÔT DISPONIBLE" labels for unavailable items */
+/* Overlay de flou noir sur les articles indisponible et label "BIENTÔT DISPONIBLE"  */
+
 .section_poudre .articles:nth-child(2)::before,
 .section_poudre .articles:nth-child(4)::before {
     content: "";
@@ -833,12 +827,12 @@ mettre en avant et les faire sauter au yeux */
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.grille_articles {
+.grille_articles  {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 100px;
     padding: 20px;
 }
 
@@ -929,11 +923,11 @@ mettre en avant et les faire sauter au yeux */
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-/*gère les articles de la section bonbons et leur taille */
+/*Gérez les articles de la section bonbons et leur taille. */
 .section_bonbons .articles {
     position: relative;
     transition: all 0.3s ease;
-    flex: 0 1 260px;
+    flex: 0 1 260px; /*permet de gérer 3 trucs : l'article ne grandit pas, il peut rétrécir au cas où et sa taille de base*/
     max-width: 300px;
 }
 
@@ -960,8 +954,8 @@ mettre en avant et les faire sauter au yeux */
         transform: rotate(3deg) translateY(15px) translateX(-15px);
     }
 
-    /*permet de replacer les artices au passage de la souris,
-    correctement pour permettre une meileur lisibilité de celui qui est pointé par 
+    /*permet de replacer les articles au passage de la souris,
+    correctement pour permettre une meilleure lisibilité de celui qui est pointé par 
     la souris*/
     .section_bonbons .articles:hover {
         transform: rotate(0deg) translateY(-20px) scale(1.08) !important;
@@ -1021,12 +1015,6 @@ mettre en avant et les faire sauter au yeux */
     text-transform: uppercase;
 }
 
-@keyframes promoShake {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(-5deg); }
-    75% { transform: rotate(5deg); }
-}
-
 .section_bonbons .articles:nth-child(2)::after {
     content: "Stock: 47";
 }
@@ -1052,7 +1040,7 @@ mettre en avant et les faire sauter au yeux */
 ========================================
 */
 
-/*gère les notation des articles de la catégories premium selection */
+/*gère les notations des articles de la catégorie premium sélection */
 .rating {
     display: flex;
     align-items: center;
@@ -1136,11 +1124,24 @@ mettre en avant et les faire sauter au yeux */
 
 .footer_social_icon {
     margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer_social_icon img {
-    width: 30px;
-    height: 30px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+.footer_social_icon img:hover,
+.footer_social_icon img:focus-visible {
+    transform: scale(1.18);
 }
 
 .footer_links {
@@ -1158,6 +1159,7 @@ mettre en avant et les faire sauter au yeux */
 .footer_link:hover {
     text-decoration: underline;
 }
+
 
 /* ===============================================
   RESPONSIVE - Adaptations mobile et tablette
@@ -1397,50 +1399,6 @@ mettre en avant et les faire sauter au yeux */
 
 }
 
-/* Responsive très petits écrans */
-@media (max-width: 480px) {
-    .section_bonbons::before,
-    .section_bonbons::after {
-        font-size: 10px;
-        padding: 4px 10px;
-        letter-spacing: 0.5px;
-        top: -10px;
-        border-radius: 5px;
-    }
-    
-    .section_bonbons::before {
-        left: 3px;
-        content: "⚠ LTD ⚠";
-    }
-    
-    .section_bonbons::after {
-        right: 3px;
-        content: "🔥 LIMITÉ 🔥";
-    }
-
-    .section_poudre::before {
-        font-size: 10px;
-        padding: 6px 15px;
-        letter-spacing: 1px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: fit-content;
-        top: -12px;
-        content: "💊 COMING SOON 💊";
-        border-radius: 18px;
-        text-align: center;
-    }
-
-    .section_gateau::before {
-        font-size: 10px;
-        padding: 4px 12px;
-        letter-spacing: 1px;
-        top: -10px;
-        content: "⭐ PREMIUM ⭐";
-        border-radius: 20px;
-    }
-}
 
 /* Responsive tablette */
 
@@ -1467,7 +1425,7 @@ mettre en avant et les faire sauter au yeux */
     }
     
     .section_poudre {
-        padding: 30px 15px 20px 15px;
+        padding: 30px 15px 20px;
     }
     
     /* Version tablette - 2 colonnes */
@@ -1549,7 +1507,7 @@ mettre en avant et les faire sauter au yeux */
     .section_gateau .articles,
     .section_poudre .articles {
         transform: none !important;  /*par précaution pour éviter que les animation ne */
-        animation: none !important;  /* vienne rentrer en conflit les une avec les autres*/
+        animation: none !important;  /* vienne casser le responsive de la page */
     }
 
     .section_bonbons::before,
